@@ -14,35 +14,37 @@ const PORT = process.env.PORT || 5000;
 
 // ─── Middleware ───────────────────────────────────────────────────────────────
 // Allow multiple dev origins (e.g. localhost, 127.0.0.1) and file:// (null origin)
-const allowedOrigins = (process.env.CORS_ORIGIN || '*')
-  .split(',')
-  .map((o) => o.trim())
-  .filter(Boolean);
+const allowedOrigins = [
+  "https://budget--buddy-web.vercel.app"
+];
 
-  
 app.use(
   cors({
-    origin: (origin, callback) => {
-      // Allow requests with no origin (e.g., file://)
-      if (!origin) return callback(null, true);
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true); // allow Postman / mobile apps
 
-      // Dev convenience: allow localhost/127.0.0.1 regardless of port
-      const url = new URL(origin);
-      if (['localhost', '127.0.0.1'].includes(url.hostname)) {
+      // allow localhost (for testing)
+      try {
+        const url = new URL(origin);
+        if (['localhost', '127.0.0.1'].includes(url.hostname)) {
+          return callback(null, true);
+        }
+      } catch (e) {}
+
+      // allow your frontend
+      if (allowedOrigins.includes(origin)) {
         return callback(null, true);
       }
 
-      // Allow explicit origins configured via CORS_ORIGIN
-      if (allowedOrigins.includes('*') || allowedOrigins.includes(origin)) {
-        return callback(null, true);
-      }
-
-      return callback(new Error(`CORS blocked for origin: ${origin}`));
+      return callback(new Error("CORS blocked"));
     },
-    methods: ['GET', 'POST', 'PUT', 'DELETE'],
-    allowedHeaders: ['Content-Type', 'Authorization']
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"],
+    credentials: true
   })
 );
+
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
