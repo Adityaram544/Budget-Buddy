@@ -30,17 +30,17 @@
 
 ## 📸 Screenshots
 
-| Sign In (Auth) | Dashboard (Light) |
+| Login (Auth) | Dashboard (Light) |
 |:---:|:---:|
-| ![Sign In](https://github.com/Adityaram544/Budget-Buddy/main/assets/LoginPage.png) | ![Light Dashboard](your-image-link-2) |
+| ![Sign In](assets/Login-Page.png) | ![Light Dashboard](assets/Bright-DashBoard.png) |
 
 | Dashboard (Dark) | Expense Manager |
 |:---:|:---:|
-| ![Dark Dashboard](your-image-link-3) | ![Expenses](your-image-link-4) |
+| ![Dark Dashboard](assets/Dark-Dashboard.png) | ![Expenses](assets/Expenses.png) |
 
 | Analytics | PDF Report |
 |:---:|:---:|
-| ![Analytics](your-image-link-5) | ![PDF](your-image-link-6) |
+| ![Analytics](assets/Analytics.png) | ![PDF](assets/Pdf-Report.png) |
 ---
 
 ## ✨ Features
@@ -399,9 +399,9 @@ Firebase blocks auth requests from unknown domains by default:
 
 | Service | URL |
 |---------|-----|
-| Frontend | `https://budget-buddy.vercel.app` |
-| Backend API | `https://budget-buddy-api.onrender.com/api` |
-| Health Check | `https://budget-buddy-api.onrender.com/api/health` |
+| Frontend | `https://budget--buddy-web.vercel.app/` |
+| Backend API | `https://budget-buddy-backend-dqhl.onrender.com` |
+| Health Check | `https://budget-buddy-backend-dqhl.onrender.com/api/health` |
 
 ---
 
@@ -436,14 +436,6 @@ git commit -m "feat: add your feature"
 # 4. Push and open a Pull Request
 git push origin feature/your-feature-name
 ```
-
----
-
-## 📄 License
-
-This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
-
----
 
 <div align="center">
 
