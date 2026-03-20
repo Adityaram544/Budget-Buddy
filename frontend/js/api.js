@@ -45,12 +45,12 @@ const API = {
     let query = `?uid=${encodeURIComponent(uid)}`;
     if (month) query += `&month=${month}`;
     if (year)  query += `&year=${year}`;
-    return this.request(`/expenses${query}`);
+    return this.request(`/api/expenses${query}`);
   },
 
   /** Add a new expense */
   addExpense(payload) {
-    return this.request('/expenses', {
+    return this.request('/api/expenses', {
       method: 'POST',
       body: JSON.stringify(payload)
     });
@@ -58,7 +58,7 @@ const API = {
 
   /** Update an expense by ID */
   updateExpense(id, payload) {
-    return this.request(`/expenses/${id}`, {
+    return this.request(`/api/expenses/${id}`, {
       method: 'PUT',
       body: JSON.stringify(payload)
     });
@@ -66,13 +66,13 @@ const API = {
 
   /** Delete an expense by ID */
   deleteExpense(id, uid) {
-    return this.request(`/expenses/${id}?uid=${encodeURIComponent(uid)}`, {
+    return this.request(`/api/expenses/${id}?uid=${encodeURIComponent(uid)}`, {
       method: 'DELETE'
     });
   },
 
   /** Get aggregated summary (category + monthly breakdown) */
   getSummary(uid) {
-    return this.request(`/expenses/summary?uid=${encodeURIComponent(uid)}`);
+    return this.request(`/api/expenses/summary?uid=${encodeURIComponent(uid)}`);
   }
 };

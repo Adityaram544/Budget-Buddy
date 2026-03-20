@@ -19,6 +19,7 @@ const allowedOrigins = (process.env.CORS_ORIGIN || '*')
   .map((o) => o.trim())
   .filter(Boolean);
 
+  
 app.use(
   cors({
     origin: (origin, callback) => {
@@ -48,6 +49,10 @@ app.use(express.urlencoded({ extended: true }));
 // ─── Health Check ─────────────────────────────────────────────────────────────
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Budget Buddy API is running 🚀' });
+});
+
+app.get("/", (req, res) => {
+  res.send("🚀 Budget Buddy Backend is Live");
 });
 
 // ─── Routes ───────────────────────────────────────────────────────────────────

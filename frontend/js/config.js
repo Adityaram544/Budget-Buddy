@@ -18,7 +18,7 @@ const CONFIG = {
 
   // ─── Backend API Base URL ────────────────────────────────────────────────────
   // Change this to your deployed backend URL in production
-  apiBaseUrl: "http://localhost:5000/api"
+  apiBaseUrl: "https://budget-buddy-backend-dqhl.onrender.com"
 };
 
 // 🔥 ADD THIS (IMPORTANT)
