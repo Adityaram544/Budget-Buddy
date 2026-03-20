@@ -15,7 +15,7 @@ const PORT = process.env.PORT || 5000;
 // ─── Middleware ───────────────────────────────────────────────────────────────
 // Allow multiple dev origins (e.g. localhost, 127.0.0.1) and file:// (null origin)
 const allowedOrigins = [
-  "https://budget--buddy-web.vercel.app/"
+  "https://budget--buddy-web.vercel.app"
 ];
 
 
