@@ -32,7 +32,7 @@
 
 | Sign In (Auth) | Dashboard (Light) |
 |:---:|:---:|
-| ![Sign In](your-image-link-1) | ![Light Dashboard](your-image-link-2) |
+| ![Sign In](https://github.com/Adityaram544/Budget-Buddy/main/assets/LoginPage.png) | ![Light Dashboard](your-image-link-2) |
 
 | Dashboard (Dark) | Expense Manager |
 |:---:|:---:|
